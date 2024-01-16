@@ -1,0 +1,351 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+:root {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+html{scroll-behavior:smooth;}
+
+body {
+  background-color: #0e0e0e;
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0E0E0E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(34deg, #f3001d -1.29%, #ff004d 109.54%);
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(34deg, rgba(243, 0, 29, .75) -1.29%, rgba(255, 0, 77, .75) 109.54%);
+
+}
+
+/* Custom colors */
+.accent_main {
+  background: linear-gradient(34deg, #f3001d -1.29%, #ff004d 109.54%);
+}
+.accent_second {
+  background: linear-gradient(117deg, #ed4700 11.11%, #ec7100 89.76%);
+}
+.card_main {
+  background: linear-gradient(
+    181deg,
+    rgba(33, 33, 33, 0) 0.49%,
+    rgba(31, 31, 31, 0.37) 39.68%,
+    rgba(28, 28, 28, 0.96) 99.49%
+  );
+}
+.card_second {
+  background: linear-gradient(
+    180deg,
+    rgba(33, 33, 33, 0) 0.1%,
+    rgba(30, 30, 30, 0.66) 56.76%,
+    #1c1c1c 93.14%
+  );
+}
+.card_third {
+  background: linear-gradient(
+    181deg,
+    rgba(33, 33, 33, 0.27) 0.49%,
+    rgba(31, 31, 31, 0.56) 37.41%,
+    rgba(28, 28, 28, 0.96) 99.49%
+  );
+}
+
+.auth-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      0deg,
+      rgba(20, 20, 20, 0.57) 0%,
+      rgba(20, 20, 20, 0.37) 58.85%,
+      rgba(20, 20, 20, 0.6) 100%
+    ),
+    rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+.cl-profileSectionPrimaryButton__emailAddresses,
+.cl-badge,
+.cl-profileSectionPrimaryButton__password {
+  color: hsl(353, 100%, 48%) !important;
+}
+
+.cl-badge {
+  background-color: hsla(353, 100%, 48%, 0.2) !important;
+}
+
+.order-1 {
+  order: 1;
+}
+.order-2 {
+  order: 2;
+}
+.order-3 {
+  order: 3;
+}
+.order-4 {
+  order: 4;
+}
+.order-5 {
+  order: 5;
+}
+
+@media (min-width: 768px) {
+  .order-1,
+  .order-2,
+  .order-3,
+  .order-4,
+  .order-5 {
+    order: 0;
+  }
+}
+
+.cl-modalBackdrop {
+  width: 100%;
+}
+
+.krug {
+  animation: skok 0.5s ease-in infinite;
+}
+
+@keyframes skok {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.krug:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+
+.krug:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+
+.rating {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 95%;
+  overflow: visible;
+  height: 2px; /* Prilagodite visinu trake */
+  border-radius: 4px; /* Zaobljenost trake */
+  background: #565656; /* Siva pozadina za neodabrane delove trake */
+  outline: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.rating::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px; /* Širina klizača */
+  height: 10px; /* Visina klizača */
+  border-radius: 50%; /* Da bi klizač bio kružan */
+  background: #f3001d; /* Bela boja klizača */
+  cursor: pointer;
+  outline: 4px solid rgba(245, 0, 29, 0.31);
+}
+
+.rating::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  outline: 4px solid rgba(245, 0, 29, 0.31);
+  border-radius: 50%;
+  background: #f3001d;
+  cursor: pointer;
+}
+
+.rating::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  animation-duration: 0.2s;
+  background: #565656;
+  border-radius: 4px;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.custom-checkbox .genre {
+  display: none;
+}
+
+.custom-checkbox .checkbox-label {
+  padding-left: 24px;
+  position: relative;
+  cursor: pointer;
+  color: #565656;
+}
+
+.custom-checkbox .checkbox-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #565656;
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+.custom-checkbox .genre:checked + .checkbox-label::before {
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.2857 6.85714L10 17.1429L4.71429 11.8571" stroke="red" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-position: calc(87.5% - 1.5px) center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  border-color: #f3001d;
+}
+
+.current-page {
+  -webkit-box-shadow: 0px 5px 30px 0.5px rgba(243, 0, 29, 1);
+  -moz-box-shadow: 0px 5px 30px 0.5px rgba(243, 0, 29, 1);
+  box-shadow: 0px 5px 30px 0.5px rgba(243, 0, 29, 1);
+  animation: slide 0.5s forwards;
+
+}
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200%;
+  }
+  100% {
+    background-position: -200%;
+  }
+}
+
+.animate-pulse {
+  animation: shimmer 2s ease-in-out infinite;
+  background: linear-gradient(to right, #374151 8%, #1f2937 30%, #374151 60%);
+  background-size: 200% 100%;
+}
+
+.discover-search-overlay {
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.75)
+}
+
+.cardcard {
+  transform: rotateX('15deg');
+}
+/* Stilovi za Firefox */
+.custom-scrollbar {
+  scrollbar-width: 0px;
+  scrollbar-color: #888 #f1f1f1;
+}
+/* Postavljanje širine scrollbar-a */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
+
+.backdrop-bg {
+  background: linear-gradient(0deg, rgba(32, 32, 32, 0.80) 0%, rgba(35, 35, 35, 0.00) 79.06%)
+}
